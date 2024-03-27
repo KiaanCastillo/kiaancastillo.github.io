@@ -1,7 +1,132 @@
+:root {
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-500: #71717a;
+  --color-zinc-300: #d4d4d8;
+  --color-white: #ffffff;
+  --color-blue-500: #3b82f6;
+
+  --border-radius-message-default: 16px;
+  --border-radius-message-sharp: 8px;
+
+  --size-avatar: 28px;
+
+  --width-container-max: 400px;
+
+  --font-size-message: 14px;
+  --font-size-current-time: 12px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  color: var(--color-zinc-300);
+}
+
+html,
+body {
+  background-color: var(--color-zinc-950);
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  margin: auto;
+  max-width: var(--width-container-max);
+  padding-left: 1rem;
+  padding-right: 1.25rem;
+}
+
+.current-time {
+  text-align: center;
+  font-size: var(--font-size-current-time);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-zinc-500);
+}
+
+.avatar {
+  width: var(--size-avatar);
+  height: var(--size-avatar);
+  border-radius: 50%;
+  align-self: flex-end;
+}
+
+.message-group {
+  display: flex;
+  gap: 0.5rem;
+  animation: fade-up 0.5s ease forwards;
+  opacity: 0;
+}
+
+.message-group:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.message-group:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.message-group:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+
+.message-group + .message-group {
+  margin-top: 1.5rem;
+}
+
+.message-group .message-list > * + * {
+  margin-top: 0.25rem;
+}
+
+.message-group .message-list .message {
+  font-size: var(--font-size-message);
+  padding: 0.5rem 1rem;
+  background-color: var(--color-zinc-900);
+  line-height: 150%;
+  border-top-left-radius: var(--border-radius-message-sharp);
+  border-bottom-left-radius: var(--border-radius-message-sharp);
+  border-top-right-radius: var(--border-radius-message-default);
+  border-bottom-right-radius: var(--border-radius-message-default);
+}
+
+.message-group .message-list .message:first-child {
+  border-top-left-radius: var(--border-radius-message-default);
+}
+
+.message a,
+.message span {
+  line-height: 150%;
+  font-size: var(--font-size-message);
+}
+
+.message a {
+  color: var(--color-blue-500);
+}
+
+.message #secret {
+  color: var(--color-zinc-500);
+  width: 5.5rem;
+  display: inline-block;
+  font-family: "Space Mono", monospace;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

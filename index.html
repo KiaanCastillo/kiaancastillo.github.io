@@ -4,28 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kiaan Castillo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <p>Sun, Feb 25 at 9:34 PM</p>
-    <article class="message-group">
-      <img src="./portrait.jpeg" alt="A headshot portrait of Kiaan Castillo" />
-      <section class="message-list">
-        <p class="message">
-          Hey, I’m Kiaan Castillo and I am a full-stack developer and product
-          designer based in Vancouver, Canada. Currently, I lead product and
-          development at
-          <a href="https://purposely.co" target="_blank">Purposely</a>.
-        </p>
-        <p class="message">
-          On the side, I’m building some cool stuff like
-          <span>ajs!@91#kl</span>, stay tuned for a beta! Hint: Notion
-        </p>
-        <p class="message">
-          When I’m not wandering the digital realm, I’m working out or spending
-          time with my loved ones.
-        </p>
-      </section>
-    </article>
+    <main>
+      <p class="current-time">Sun, Feb 25 at 9:34 PM</p>
+      <article class="message-group">
+        <img
+          src="./portrait.jpeg"
+          alt="A headshot portrait of Kiaan Castillo"
+          class="avatar"
+        />
+        <section class="message-list">
+          <p class="message">
+            Hey, I’m Kiaan Castillo and I am a full-stack developer and product
+            designer based in Vancouver, Canada. Currently, I lead product and
+            development at
+            <a href="https://purposely.co" target="_blank">Purposely</a>.
+          </p>
+          <p class="message">
+            On the side, I’m building some cool stuff like
+            <span id="secret">ajs!@91#kl</span>, stay tuned for a beta! Hint:
+            Notion
+          </p>
+          <p class="message">
+            When I’m not wandering the digital realm, I’m working out or
+            spending time with my loved ones.
+          </p>
+        </section>
+      </article>
+      <article class="message-group">
+        <img
+          src="./portrait.jpeg"
+          alt="A headshot portrait of Kiaan Castillo"
+          class="avatar"
+        />
+        <section class="message-list">
+          <p class="message">Here’s what I’m up to right now:</p>
+          <p class="message">
+            Planning a small getaway with some university friends after the
+            spring semester!
+          </p>
+          <p class="message">
+            Picking up my Sony A6000 after a couple of years and exploring my
+            interest in cinematography
+          </p>
+          <p class="message">
+            Revisiting my childhood books, currently reading: Shiver by Maggie
+            Stiefvater
+          </p>
+        </section>
+      </article>
+      <article class="message-group">
+        <img
+          src="./portrait.jpeg"
+          alt="A headshot portrait of Kiaan Castillo"
+          class="avatar"
+        />
+        <section class="message-list">
+          <p class="message">
+            In the meantime, I’d love to connect and chat! You can find me on
+            <a href="https://www.linkedin.com/in/kiaancastillo/" target="_blank"
+              >LinkedIn</a
+            >
+            or
+            <a href="mailto:kiaancastillo@gmail.com" target="_blank"
+              >through email</a
+            >. Let’s talk design systems, exciting product finds, and gym tips!
+          </p>
+          <p class="message">
+            And, I can show you some photos of my dog, Kasper.
+          </p>
+        </section>
+      </article>
+    </main>
   </body>
+  <script>
+    const scrambleString = (input) => {
+      const charset =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
+      const charsetLength = charset.length;
+      let characters = input.split("");
+
+      for (let i = 0; i < input.length; i++) {
+        const randomIndex = Math.floor(Math.random() * charsetLength);
+        characters[i] = charset[randomIndex];
+      }
+
+      return characters.join("").slice(0, input.length);
+    };
+
+    setInterval(() => {
+      const secretString = document.getElementById("secret");
+      const newSecretString = scrambleString(secretString.textContent);
+      secretString.textContent = newSecretString;
+    }, 125);
+  </script>
 </html>
