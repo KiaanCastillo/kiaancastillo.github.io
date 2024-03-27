@@ -13,6 +13,8 @@
 
   --width-container-max: 400px;
 
+  --height-reaction: 32px;
+
   --font-size-message: 14px;
   --font-size-current-time: 12px;
 }
@@ -37,6 +39,45 @@ body {
   background-color: var(--color-zinc-950);
   width: 100%;
   height: 100%;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(0.25rem);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0rem);
+  }
 }
 
 main {
@@ -88,7 +129,7 @@ main {
   margin-top: 1.5rem;
 }
 
-.message-group .message-list > * + * {
+.message-group .message-list > .message + .message {
   margin-top: 0.25rem;
 }
 
@@ -124,13 +165,31 @@ main {
   font-family: "Space Mono", monospace;
 }
 
-@keyframes fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.reaction {
+  height: var(--height-reaction);
+  border-radius: 4rem;
+  background-color: var(--color-zinc-900);
+  padding: 0.25rem 0.75rem 0.5rem 0.75rem;
+  border: 3px solid var(--color-zinc-950);
+  position: absolute;
+  right: 0.25rem;
+  bottom: -1.5rem;
+  display: grid;
+  place-items: center;
+  font-size: var(--font-size-message);
+  opacity: 0;
+  animation: pop-in 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+  animation-delay: 0.8s;
+}
+
+.seen {
+  position: absolute;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  display: inline-block;
+  font-size: var(--font-size-current-time);
+  color: var(--color-zinc-500);
+  animation: fade-from-left 0.5s ease forwards;
+  animation-delay: 1.25s;
+  opacity: 0;
 }
