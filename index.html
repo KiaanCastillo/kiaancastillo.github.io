@@ -14,7 +14,7 @@
   </head>
   <body>
     <main>
-      <p class="current-time">Sun, Feb 25 at 9:34 PM</p>
+      <p id="current-time">Sun, Feb 25 at 9:34 PM</p>
       <article class="message-group">
         <img
           src="./portrait.jpeg"
@@ -104,6 +104,37 @@
       const secretString = document.getElementById("secret");
       const newSecretString = scrambleString(secretString.textContent);
       secretString.textContent = newSecretString;
-    }, 125);
+    }, 100);
+
+    const formatCurrentTime = () => {
+      const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      const currentDate = new Date();
+      const dayOfWeek = days[currentDate.getDay()];
+      const month = months[currentDate.getMonth()];
+      const date = currentDate.getDate();
+      const hours = currentDate.getHours() % 12 || 12; // Convert 24-hour time to 12-hour time
+      const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+      const amOrPm = currentDate.getHours() < 12 ? "AM" : "PM";
+
+      return `${dayOfWeek}, ${month} ${date} at ${hours}:${minutes} ${amOrPm}`;
+    };
+
+    const currentTime = document.getElementById("current-time");
+    currentTime.textContent = formatCurrentTime();
   </script>
 </html>

@@ -46,7 +46,7 @@ main {
   padding-right: 1.25rem;
 }
 
-.current-time {
+#current-time {
   text-align: center;
   font-size: var(--font-size-current-time);
   margin-top: 1rem;
@@ -64,6 +64,10 @@ main {
 .message-group {
   display: flex;
   gap: 0.5rem;
+}
+
+.message-group,
+#current-time {
   animation: fade-up 0.5s ease forwards;
   opacity: 0;
 }
