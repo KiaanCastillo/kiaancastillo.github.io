@@ -83,8 +83,9 @@ body {
 main {
   margin: auto;
   max-width: var(--width-container-max);
-  padding-left: 1rem;
+  padding-left: 0.95rem;
   padding-right: 1.25rem;
+  padding-bottom: 3rem;
 }
 
 #current-time {
@@ -93,6 +94,7 @@ main {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   color: var(--color-zinc-500);
+  padding-left: 3rem;
 }
 
 .avatar {
