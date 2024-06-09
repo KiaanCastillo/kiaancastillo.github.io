@@ -2,44 +2,50 @@ import projectGathersfu from "./assets/project-gathersfu.png";
 import projectPurposeui from "./assets/project-purposeui.png";
 import projectPeakbuddies from "./assets/project-peakbuddies.png";
 import portraitKiaan from "./assets/portrait-kiaan.png";
-import { IconWrapper, IconScissors } from "@c/icons";
+import { IconWrapper, IconScissors } from "./components/icons";
+import { getCurrentVancouverTimeString } from "./util/date";
 
 function App() {
   return (
     <>
-      <nav className="flex flex-col	gap-8 fixed ml-16">
+      <nav className="px-6 pt-6 lg:px-0 lg:pt-0 flex flex-col gap-4	lg:gap-8 lg:fixed lg:ml-16 m-auto max-w-screen-sm">
         <header>
           <h2 className="text-xs font-medium">Kiaan Castillo</h2>
           <p className="text-xs">Product designer & developer</p>
         </header>
-        <ul>
-          <li>
+        <ul className="flex gap-3 lg:block">
+          <li className="mb-3">
             <a href="/" className="text-gray-400 text-xs">
               LinkedIn
             </a>
           </li>
-          <li>
+          <li className="mb-3">
             <a href="/" className="text-gray-400 text-xs">
               GitHub
             </a>
           </li>
-          <li>
+          <li className="mb-3">
             <a href="/" className="text-gray-400 text-xs">
               Dribbble
             </a>
           </li>
-          <li>
+          <li className="mb-3">
+            <a href="/" className="text-gray-400 text-xs">
+              Email
+            </a>
+          </li>
+          <li className="mb-3">
             <a href="/" className="text-gray-400 text-xs">
               CV
             </a>
           </li>
         </ul>
-        <hr className="bg-gray-100 border-0 h-px" />
-        <p className="font-mono text-gray-400 text-[0.63rem]">
+        <hr className="bg-gray-100 border-0 h-px hidden lg:block" />
+        <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block">
           Last updated 31/05/24
         </p>
       </nav>
-      <main className="max-w-screen-sm m-auto mt-24 mb-24">
+      <main className="mt-12 mb-12 max-w-screen-sm m-auto lg:mt-24 lg:mb-24 px-6 lg:px-0">
         <section className="mb-8">
           <h1 className="font-serif italic mb-8 text-[2.5rem]">
             Crafting interfaces & <br />
@@ -89,8 +95,8 @@ function App() {
           </IconWrapper>
           <hr className="border-0 h-px bg-dashed bg-[length:11px_11px]" />
         </article>
-        <section className="flex gap-7">
-          <section className=" relative">
+        <section className="block md:flex gap-7">
+          <section className="relative mb-8 lg:mb-0">
             <h2 className="font-serif italic text-[2rem] whitespace-nowrap">
               And that’s only
               <br />
@@ -98,7 +104,7 @@ function App() {
             </h2>
             <img
               src={portraitKiaan}
-              className="max-w-[9.5rem] absolute top-11 left-5"
+              className="max-w-[9.5rem] mt-[-1.25rem] md:absolute left-5"
               alt="A photo of Kiaan Castillo, facing away from the camera at Santa Monica beach"
             />
           </section>
@@ -126,9 +132,9 @@ function App() {
           </section>
         </section>
       </main>
-      <footer className="max-w-screen-sm m-auto font-mono text-gray-400 flex justify-between pb-4">
+      <footer className="max-w-screen-sm m-auto font-mono text-gray-400 flex justify-between pb-4 px-6 lg:px-0">
         <p className="text-[0.63rem]">Always building, always learning</p>
-        <p className="text-[0.63rem]">12:32 PM | 12°C</p>
+        <p className="text-[0.63rem]">{getCurrentVancouverTimeString()}</p>
       </footer>
     </>
   );

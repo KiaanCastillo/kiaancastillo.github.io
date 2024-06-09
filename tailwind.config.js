@@ -8,16 +8,22 @@ export default {
       mono: ["JetBrains Mono", "monospace"],
     },
     extend: {
+      screens: {
+        lg: "1174px",
+        // => @media (min-width: 640px) { ... }
+      },
+      animation: {
+        "blur-in": {},
+      },
       keyframes: {
-        fadeUp: {
-          "0%": { transform: "rotate(-3deg)" },
-          "100%": { transform: "rotate(3deg)" },
+        "blur-in": {
+          "0%": { transform: "opacity: 0" },
+          "100%": { transform: "opacity: 1" },
         },
       },
       backgroundImage: {
         dashed:
           "linear-gradient(90deg, #E5E7EB, #E5E7EB 40%, transparent 40%, transparent 100%);",
-        // "linear-gradient(to right, #E5E7EB, #E5E7EB 11px, transparent 11px,transparent 22px)",
       },
     },
   },
