@@ -2,51 +2,54 @@ import projectGathersfu from "./assets/project-gathersfu.png";
 import projectPurposeui from "./assets/project-purposeui.png";
 import projectPeakbuddies from "./assets/project-peakbuddies.png";
 import portraitKiaan from "./assets/portrait-kiaan.png";
-import { IconWrapper, IconScissors } from "./components/icons";
-import { getCurrentVancouverTimeString } from "./util/date";
+import {
+  IconWrapper,
+  IconScissors,
+  Navbar,
+  ProjectItem,
+  Footer,
+} from "./components";
 
 function App() {
+  const NAV_BAR_ITEMS = [
+    { href: "https://www.linkedin.com/in/kiaancastillo/", label: "LinkedIn" },
+    { href: "https://github.com/KiaanCastillo", label: "GitHub" },
+    { href: "https://dribbble.com/kiaancastillo", label: "Dribbble" },
+    { href: "mailto:kiaancastillo@gmail.com", label: "Email" },
+    { href: "/", label: "CV" },
+  ];
+
+  const PROJECT_ITEMS = [
+    {
+      imageSrc: projectGathersfu,
+      title: "GatherSFU",
+      description: "Solving the university student’s biggest problem",
+      href: "/",
+    },
+    {
+      imageSrc: projectPurposeui,
+      title: "Purpose UI",
+      description:
+        "An accessible and friendly design system for the Purposely platform",
+      href: "/",
+    },
+    {
+      imageSrc: projectPeakbuddies,
+      title: "PeakBuddies",
+      description:
+        "“BeReal” but for hackathons, a fresh new take on networking",
+      href: "/",
+    },
+  ];
+
   return (
     <>
-      <nav className="px-6 pt-6 lg:px-0 lg:pt-0 flex flex-col gap-4	lg:gap-8 lg:fixed lg:ml-16 m-auto max-w-screen-sm">
-        <header>
-          <h2 className="text-xs font-medium">Kiaan Castillo</h2>
-          <p className="text-xs">Product designer & developer</p>
-        </header>
-        <ul className="flex gap-3 lg:block">
-          <li className="mb-3">
-            <a href="/" className="text-gray-400 text-xs">
-              LinkedIn
-            </a>
-          </li>
-          <li className="mb-3">
-            <a href="/" className="text-gray-400 text-xs">
-              GitHub
-            </a>
-          </li>
-          <li className="mb-3">
-            <a href="/" className="text-gray-400 text-xs">
-              Dribbble
-            </a>
-          </li>
-          <li className="mb-3">
-            <a href="/" className="text-gray-400 text-xs">
-              Email
-            </a>
-          </li>
-          <li className="mb-3">
-            <a href="/" className="text-gray-400 text-xs">
-              CV
-            </a>
-          </li>
-        </ul>
-        <hr className="bg-gray-100 border-0 h-px hidden lg:block" />
-        <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block">
-          Last updated 31/05/24
-        </p>
-      </nav>
+      <Navbar
+        links={NAV_BAR_ITEMS}
+        className="opacity-0 animate-blur-in [--blur-delay:50ms]"
+      />
       <main className="mt-12 mb-12 max-w-screen-sm m-auto lg:mt-24 lg:mb-24 px-6 lg:px-0">
-        <section className="mb-8">
+        <section className="opacity-0 animate-blur-in [--blur-delay:50ms] mb-8">
           <h1 className="font-serif italic mb-8 text-[2.5rem]">
             Crafting interfaces & <br />
             systems with intention
@@ -58,44 +61,23 @@ function App() {
             Currently, I lead development and product at Purposely.
           </p>
           <p>
-            I love building products from 0→1 and exploring where it can go
+            I love building products from 0→1 and exploring where they can go
             next. Being involved in every step of the process and getting deep
             into the problem, the pixels, and the code is my happy place.
           </p>
         </section>
-        <section>
-          <article className="mb-12">
-            <a href="/">
-              <img src={projectGathersfu} alt="" className="mb-4" />
-              <h3 className=" font-medium">GatherSFU</h3>
-              <p>Solving the university student’s biggest problem</p>
-            </a>
-          </article>
-          <article className="mb-12">
-            <a href="/">
-              <img src={projectPurposeui} alt="" className="mb-4" />
-              <h3 className=" font-medium">Purpose UI</h3>
-              <p>
-                An accessible and friendly design system for the Purposely
-                platform
-              </p>
-            </a>
-          </article>
-          <article className="mb-12">
-            <a href="">
-              <img src={projectPeakbuddies} alt="" className="mb-4" />
-              <h3 className=" font-medium">PeakBuddies</h3>
-              <p>“BeReal” but for hackathons, a fresh new take on networking</p>
-            </a>
-          </article>
+        <section className="opacity-0 animate-blur-in [--blur-delay:100ms]">
+          {PROJECT_ITEMS.map((project) => (
+            <ProjectItem {...project} />
+          ))}
         </section>
-        <article className="relative mt-[4.5rem] mb-[4.5rem]">
+        <article className="opacity-0 animate-blur-in [--blur-delay:150ms] relative mt-[4.5rem] mb-[4.5rem]">
           <IconWrapper className="absolute left-[-1.5rem]">
             <IconScissors />
           </IconWrapper>
           <hr className="border-0 h-px bg-dashed bg-[length:11px_11px]" />
         </article>
-        <section className="block md:flex gap-7">
+        <section className="opacity-0 animate-blur-in [--blur-delay:150ms] block md:flex gap-7">
           <section className="relative mb-8 lg:mb-0">
             <h2 className="font-serif italic text-[2rem] whitespace-nowrap">
               And that’s only
@@ -132,10 +114,7 @@ function App() {
           </section>
         </section>
       </main>
-      <footer className="max-w-screen-sm m-auto font-mono text-gray-400 flex justify-between pb-4 px-6 lg:px-0">
-        <p className="text-[0.63rem]">Always building, always learning</p>
-        <p className="text-[0.63rem]">{getCurrentVancouverTimeString()}</p>
-      </footer>
+      <Footer />
     </>
   );
 }
