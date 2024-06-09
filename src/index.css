@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    @apply text-gray-700;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply leading-[100%];
+  }
+
+  p,
+  ul {
+    @apply text-sm;
+  }
+
+  p,
+  li {
+    @apply leading-[150%];
+  }
+}
