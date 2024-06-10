@@ -55,15 +55,25 @@ function App() {
             systems with intention
           </h1>
           <p>
-            Hey, I’m Kiaan and I am a digital product designer and developer.{" "}
+            Hey, I’m Kiaan and I am a digital product designer and developer.
           </p>
           <p className="mb-6">
-            Currently, I lead development and product at Purposely.
+            Currently, I lead development and product at{" "}
+            <a
+              href="https://purposely.co"
+              target="_blank"
+              className="underline"
+            >
+              Purposely
+            </a>
+            .
           </p>
           <p>
             I love building products from 0→1 and exploring where they can go
             next. Being involved in every step of the process and getting deep
-            into the problem, the pixels, and the code is my happy place.
+            into the problem, the pixels, and the code is my happy place; making
+            sure everything I put out into the world is of utmost quality is my
+            goal.
           </p>
         </section>
         <section className="opacity-0 animate-blur-in [--blur-delay:100ms]">
@@ -86,7 +96,7 @@ function App() {
             </h2>
             <img
               src={portraitKiaan}
-              className="max-w-[9.5rem] mt-[-1.25rem] md:absolute left-5"
+              className="max-w-[9.5rem] mt-[-1.25rem] ml-5 md:ml-0 md:absolute left-7 hover:-rotate-2 hover:cursor-pointer transition-transform duration-[250ms] ease-in-out"
               alt="A photo of Kiaan Castillo, facing away from the camera at Santa Monica beach"
             />
           </section>
@@ -111,6 +121,9 @@ function App() {
               <li>Starting my running era</li>
               <li>Making more time for my loved ones</li>
             </ul>
+            <p className="mt-4">
+              And many more... but for now, thanks for stopping by :)
+            </p>
           </section>
         </section>
       </main>

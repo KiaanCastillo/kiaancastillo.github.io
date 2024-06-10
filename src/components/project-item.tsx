@@ -12,7 +12,7 @@ export const ProjectItem = ({
   href,
 }: ProjectItemProps) => {
   return (
-    <article className="mb-12 hover:animate-perk-up">
+    <article className="mb-12 hover:translate-y-[-0.25rem] transition-transform ease-in-out duration-[250ms] ">
       <a href={href}>
         <img src={imageSrc} alt="" className="mb-4" />
         <h3 className="font-medium mb-1">{title}</h3>

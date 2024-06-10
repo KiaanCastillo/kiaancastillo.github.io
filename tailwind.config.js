@@ -15,6 +15,8 @@ export default {
         "blur-in":
           "blur-in 0.75s cubic-bezier(0.65,0.05,0.36,1) var(--blur-delay, 0) forwards",
         "perk-up": "perk-up 0.25s cubic-bezier(0.65,0.05,0.36,1) forwards",
+        "tilt-right":
+          "tilt-right 0.25s cubic-bezier(0.65,0.05,0.36,1) forwards",
       },
       keyframes: {
         "blur-in": {
@@ -39,6 +41,14 @@ export default {
           },
           to: {
             transform: "translateY(-0.25rem)",
+          },
+        },
+        "tilt-right": {
+          from: {
+            transform: "rotate(0deg)",
+          },
+          to: {
+            transform: "rotate(-2.5deg)",
           },
         },
       },

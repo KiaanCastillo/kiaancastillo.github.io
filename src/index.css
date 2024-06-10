@@ -23,4 +23,11 @@
   li {
     @apply leading-[150%];
   }
+
+  a:hover {
+    @apply opacity-75;
+    @apply transition-opacity;
+    @apply duration-200;
+    @apply ease-in-out;
+  }
 }

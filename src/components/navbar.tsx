@@ -18,8 +18,8 @@ export const Navbar = ({ links, className = "" }: NavbarProps) => {
         <p className="text-xs">Product designer & developer</p>
       </header>
       <ul className="flex gap-3 lg:block">
-        {links.map(({ href, label }) => (
-          <li className="mb-3">
+        {links.map(({ href, label }, index) => (
+          <li key={index} className="mb-3">
             <a href={href} className="text-gray-400 text-xs" target="_blank">
               {label}
             </a>
@@ -27,9 +27,19 @@ export const Navbar = ({ links, className = "" }: NavbarProps) => {
         ))}
       </ul>
       <hr className="bg-gray-100 border-0 h-px hidden lg:block" />
-      <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block">
-        Last updated 09/06/24
-      </p>
+      <section>
+        <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block mb-1">
+          Last updated 09/06/24
+        </p>
+        <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block underline">
+          <a
+            href="https://github.com/KiaanCastillo/kiaancastillo.github.io"
+            target="_blank"
+          >
+            View source code
+          </a>
+        </p>
+      </section>
     </nav>
   );
 };
