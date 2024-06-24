@@ -8,6 +8,8 @@ import {
   Navbar,
   ProjectItem,
   Footer,
+  ContentContainer,
+  DashedDivider,
 } from "./components";
 
 function App() {
@@ -45,10 +47,30 @@ function App() {
   return (
     <>
       <Navbar
+        header={
+          <header>
+            <h2 className="text-xs font-medium">Kiaan Castillo</h2>
+            <p className="text-xs">Product designer & developer</p>
+          </header>
+        }
         links={NAV_BAR_ITEMS}
         className="opacity-0 animate-blur-in [--blur-delay:50ms]"
+        footer={
+          <section>
+            <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block mb-1 ">
+              Last updated 09/06/24
+            </p>
+            <a
+              href="https://github.com/KiaanCastillo/kiaancastillo.github.io"
+              target="_blank"
+              className="font-mono text-gray-400 text-[0.63rem] hidden lg:block underline hover:text-gray-500 transition-colors duration-100 ease-in-out"
+            >
+              View source code
+            </a>
+          </section>
+        }
       />
-      <main className="mt-12 mb-12 max-w-screen-sm m-auto lg:mt-24 lg:mb-24 px-6 lg:px-0">
+      <ContentContainer>
         <section className="opacity-0 animate-blur-in [--blur-delay:50ms] mb-8">
           <h1 className="font-serif italic mb-8 text-[2.5rem]">
             Crafting interfaces & <br />
@@ -62,7 +84,7 @@ function App() {
             <a
               href="https://purposely.co"
               target="_blank"
-              className="underline"
+              className="underline hover:text-gray-500 transition-colors duration-100 ease-in-out"
             >
               Purposely
             </a>
@@ -85,7 +107,7 @@ function App() {
           <IconWrapper className="absolute left-[-1.5rem]">
             <IconScissors />
           </IconWrapper>
-          <hr className="border-0 h-px bg-dashed bg-[length:11px_11px]" />
+          <DashedDivider />
         </article>
         <section className="opacity-0 animate-blur-in [--blur-delay:150ms] block md:flex gap-7">
           <section className="relative mb-8 lg:mb-0">
@@ -126,7 +148,7 @@ function App() {
             </p>
           </section>
         </section>
-      </main>
+      </ContentContainer>
       <Footer />
     </>
   );

@@ -7,7 +7,9 @@ export const getCurrentVancouverTimeString = (): string => {
   const ampm: string = hours >= 12 ? "PM" : "AM";
   const formattedHours: number = hours % 12 || 12;
   const formattedMinutes: string = minutes < 10 ? `0${minutes}` : `${minutes}`;
-  const currentTimeString: string = `${formattedHours}:${formattedMinutes} ${ampm}`;
+  const seconds: number = currentTime.getSeconds();
+  const formattedSeconds: string = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  const currentTimeString: string = `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
 
   return currentTimeString;
 };

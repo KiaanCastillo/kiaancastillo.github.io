@@ -15,7 +15,8 @@
   }
 
   p,
-  ul {
+  li,
+  a {
     @apply text-sm;
   }
 
@@ -24,10 +25,10 @@
     @apply leading-[150%];
   }
 
-  a:hover {
-    @apply opacity-75;
-    @apply transition-opacity;
-    @apply duration-200;
-    @apply ease-in-out;
+  figcaption {
+    @apply text-xs;
+    @apply text-gray-500;
+    @apply text-right;
+    @apply mt-2;
   }
 }
