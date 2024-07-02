@@ -6,16 +6,17 @@ interface FooterProps {
 }
 
 export const Footer = ({ className = "" }: FooterProps) => {
-  const [currentTime, setCurrentTime] = useState(
+  const [currentTime, setCurrentTime] = useState<string>(
     getCurrentVancouverTimeString()
   );
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const updateTimeIntervalMs = 1000;
+    const updateTime: number = setInterval(() => {
       setCurrentTime(getCurrentVancouverTimeString());
-    }, 1000); // Every second
+    }, updateTimeIntervalMs); // Every second
 
-    return () => clearInterval(interval);
+    return () => clearInterval(updateTime);
   }, []);
 
   return (

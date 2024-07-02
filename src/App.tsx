@@ -1,47 +1,40 @@
-import projectGathersfu from "./assets/project-gathersfu.png";
-import projectPurposeui from "./assets/project-purposeui.png";
-import projectPeakbuddies from "./assets/project-peakbuddies.png";
 import portraitKiaan from "./assets/portrait-kiaan.png";
 import {
   IconWrapper,
   IconScissors,
   Navbar,
-  ProjectItem,
+  ProjectPreviewCard,
   Footer,
   ContentContainer,
   DashedDivider,
+  LinkItem,
 } from "./components";
+import { useEffect } from "react";
+import { PROJECT_LIST, Project } from "./data";
 
 function App() {
-  const NAV_BAR_ITEMS = [
-    { href: "https://www.linkedin.com/in/kiaancastillo/", label: "LinkedIn" },
-    { href: "https://github.com/KiaanCastillo", label: "GitHub" },
-    { href: "https://dribbble.com/kiaancastillo", label: "Dribbble" },
-    { href: "mailto:kiaancastillo@gmail.com", label: "Email" },
-    { href: "/", label: "CV" },
-  ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const PROJECT_ITEMS = [
+  const NAV_BAR_ITEMS: LinkItem[] = [
     {
-      imageSrc: projectGathersfu,
-      title: "GatherSFU",
-      description: "Solving the university student’s biggest problem",
-      href: "/",
+      href: "https://www.linkedin.com/in/kiaancastillo/",
+      label: "LinkedIn",
     },
     {
-      imageSrc: projectPurposeui,
-      title: "Purpose UI",
-      description:
-        "An accessible and friendly design system for the Purposely platform",
-      href: "/",
+      href: "https://github.com/KiaanCastillo",
+      label: "GitHub",
     },
     {
-      imageSrc: projectPeakbuddies,
-      title: "PeakBuddies",
-      description:
-        "“BeReal” but for hackathons, a fresh new take on networking",
-      href: "/",
+      href: "https://dribbble.com/kiaancastillo",
+      label: "Dribbble",
     },
+    {
+      href: "mailto:kiaancastillo@gmail.com",
+      label: "Email",
+    },
+    { href: "/", label: "CV" },
   ];
 
   return (
@@ -58,7 +51,7 @@ function App() {
         footer={
           <section>
             <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block mb-1 ">
-              Last updated 09/06/24
+              Last updated 07/01/24
             </p>
             <a
               href="https://github.com/KiaanCastillo/kiaancastillo.github.io"
@@ -99,9 +92,21 @@ function App() {
           </p>
         </section>
         <section className="opacity-0 animate-blur-in [--blur-delay:100ms]">
-          {PROJECT_ITEMS.map((project) => (
-            <ProjectItem {...project} />
-          ))}
+          {Object.keys(PROJECT_LIST).map((projectKey, index) => {
+            const {
+              header: { name, title, image },
+            }: Project = PROJECT_LIST[projectKey];
+
+            return (
+              <ProjectPreviewCard
+                imageSrc={image}
+                title={name}
+                description={title}
+                projectKey={projectKey}
+                key={index}
+              />
+            );
+          })}
         </section>
         <article className="opacity-0 animate-blur-in [--blur-delay:150ms] relative mt-[4.5rem] mb-[4.5rem]">
           <IconWrapper className="absolute left-[-1.5rem]">
@@ -144,7 +149,15 @@ function App() {
               <li>Making more time for my loved ones</li>
             </ul>
             <p className="mt-4">
-              And many more... but for now, thanks for stopping by :)
+              And many more... but for now, thanks for stopping by :) Let's{" "}
+              <a
+                href="https://www.linkedin.com/in/kiaancastillo/"
+                target="_blank"
+                className="underline hover:text-gray-500 transition-colors duration-100 ease-in-out"
+              >
+                connect
+              </a>{" "}
+              and chat!
             </p>
           </section>
         </section>

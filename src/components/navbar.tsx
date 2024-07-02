@@ -1,6 +1,9 @@
-interface LinkItem {
+import { HashLink } from "react-router-hash-link";
+
+export interface LinkItem {
   href: string;
   label: string;
+  useHashLink?: boolean;
 }
 
 interface NavbarProps {
@@ -22,15 +25,24 @@ export const Navbar = ({
     >
       {header}
       <ul className="flex gap-3 lg:block">
-        {links.map(({ href, label }, index) => (
+        {links.map(({ href, label, useHashLink = false }, index) => (
           <li key={index} className="mb-3">
-            <a
-              href={href}
-              className="text-gray-400 text-xs hover:text-gray-500 transition-colors duration-100 ease-in-out"
-              target="_blank"
-            >
-              {label}
-            </a>
+            {useHashLink ? (
+              <HashLink
+                to={href}
+                className="text-gray-400 text-xs hover:text-gray-500 transition-colors duration-100 ease-in-out"
+              >
+                {label}
+              </HashLink>
+            ) : (
+              <a
+                href={href}
+                className="text-gray-400 text-xs hover:text-gray-500 transition-colors duration-100 ease-in-out"
+                target="_blank"
+              >
+                {label}
+              </a>
+            )}
           </li>
         ))}
       </ul>
