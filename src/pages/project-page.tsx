@@ -65,7 +65,7 @@ export const ProjectPage = () => {
           </ul>
           <ul>
             <h3 className="font-medium text-gray-700 mb-1">Timeline</h3>
-            {projectData.info.timeline}
+            <p className="">{projectData.info.timeline}</p>
           </ul>
           <ul>
             <h3 className="font-medium text-gray-700 mb-1">Skills</h3>
