@@ -8,6 +8,8 @@ import gatherSFUProblemReddit from "../assets/projects/gathersfu/problem-reddit.
 import gatherSFUSolutionMeetup from "../assets/projects/gathersfu/solution-meetup.png";
 import gatherSFUResultAwardsBeta from "../assets/projects/gathersfu/result-awards-beta.png";
 
+import purposeUIProjectImage from "../assets/project-purposeui.png";
+
 import peakBuddiesProjectImage from "../assets/project-peakbuddies.png";
 import peakBuddiesHighlightsLoginOnboarding from "../assets/projects/peakbuddies/highlights-login-onboarding.png";
 import peakBuddiesHighlightsNetworkingFlow from "../assets/projects/peakbuddies/highlights-networking-flow.png";
@@ -27,11 +29,15 @@ export interface Project {
     role: string[];
     timeline: string;
     skills: string[];
-    team: { name: string; link: string }[];
+    team?: { name: string; link: string }[];
+    tools?: string[];
   };
-  highlights: {
+  highlights?: {
     description: string;
-    images: { src: string; alt: string }[];
+    images?: { src: string; alt: string }[];
+  };
+  privateNotice?: {
+    message: string[];
   };
   problem?: {
     title?: string;
@@ -141,6 +147,28 @@ export const PROJECT_LIST: Projects = {
           src: gatherSFUResultAwardsBeta,
           alt: "StormHacks 2022 winner and open beta results",
         },
+      ],
+    },
+  },
+  "purpose-ui": {
+    header: {
+      name: "Purpose UI",
+      title:
+        "An accessible and friendly design system for the Purposely platform",
+      ctaLabel: "Visit Purposely",
+      ctaLink: "https://purposely.co/",
+      image: purposeUIProjectImage,
+    },
+    info: {
+      role: ["Primary Designer and Developer"],
+      timeline: "January 2023 - Present",
+      skills: ["Design Systems", "Accessibility", "Visual Design", "UX Design"],
+      tools: ["Figma", "React", "Less"],
+    },
+    privateNotice: {
+      message: [
+        "Purposely is an employee experience platform that helps companies build strong and resilient workplace culture through employee volunteer initiatives.",
+        "This project is private, please contact me for more info.",
       ],
     },
   },

@@ -73,34 +73,64 @@ export const ProjectPage = () => {
               <li key={index}>{skill}</li>
             ))}
           </ul>
-          <ul>
-            <h3 className="font-medium text-gray-700 mb-1">Team</h3>
-            {projectData.info.team.map(({ name, link }, index) => (
-              <li key={index}>
-                <a href={link} target="_blank" className="underline">
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {projectData.info.team && (
+            <ul>
+              <h3 className="font-medium text-gray-700 mb-1">Team</h3>
+              {projectData.info.team.map(({ name, link }, index) => (
+                <li key={index}>
+                  <a href={link} target="_blank" className="underline">
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+          {projectData.info.tools && (
+            <ul>
+              <h3 className="font-medium text-gray-700 mb-1">Tools</h3>
+              {projectData.info.tools.map((tool, index) => (
+                <li key={index}>{tool}</li>
+              ))}
+            </ul>
+          )}
         </section>
         <DashedDivider />
-        <section>
-          <h2 id="highlights" className="font-medium mb-2 pt-6">
-            Highlights
-          </h2>
-          <p className="mb-4 text-gray-500">
-            {projectData.highlights.description}
-          </p>
-          <section className="flex gap-8 flex-col">
-            {projectData.highlights.images.map(({ src, alt }, index) => (
-              <figure key={index}>
-                <img src={src} alt={alt} />
-                <figcaption>{alt}</figcaption>
-              </figure>
+        {projectData.highlights ? (
+          <section>
+            <h2 id="highlights" className="font-medium mb-2 pt-6">
+              Highlights
+            </h2>
+            <p className="mb-4 text-gray-500">
+              {projectData.highlights.description}
+            </p>
+            {projectData.highlights.images && (
+              <section className="flex gap-8 flex-col">
+                {projectData.highlights.images.map(({ src, alt }, index) => (
+                  <figure key={index}>
+                    <img src={src} alt={alt} />
+                    <figcaption>{alt}</figcaption>
+                  </figure>
+                ))}
+              </section>
+            )}
+          </section>
+        ) : (
+          <></>
+        )}
+        {projectData.privateNotice ? (
+          <section>
+            <h2 id="problem" className="font-medium mb-2 pt-6">
+              Notice
+            </h2>
+            {projectData.privateNotice.message.map((message, index) => (
+              <p className="mb-4" key={index}>
+                {message}
+              </p>
             ))}
           </section>
-        </section>
+        ) : (
+          <></>
+        )}
         {projectData.problem ? (
           <section>
             <h2 id="problem" className="font-medium mb-2 pt-6">
