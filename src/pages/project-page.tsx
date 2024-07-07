@@ -4,6 +4,7 @@ import {
   DashedDivider,
   IconWrapper,
   IconArrowLeft,
+  Footer,
 } from "../components";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -228,6 +229,7 @@ export const ProjectPage = () => {
           </section>
         </footer> */}
       </ContentContainer>
+      <Footer />
     </>
   );
 };

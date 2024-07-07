@@ -43,7 +43,7 @@ function App() {
         header={
           <header>
             <h2 className="text-xs font-medium">Kiaan Castillo</h2>
-            <p className="text-xs">Product designer & developer</p>
+            <p className="text-xs">Designer & Developer</p>
           </header>
         }
         links={NAV_BAR_ITEMS}
@@ -51,7 +51,7 @@ function App() {
         footer={
           <section>
             <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block mb-1 ">
-              Last updated 07/01/24
+              Last updated 07/06/24
             </p>
             <a
               href="https://github.com/KiaanCastillo/kiaancastillo.github.io"
@@ -69,9 +69,7 @@ function App() {
             Crafting interfaces & <br />
             systems with intention
           </h1>
-          <p>
-            Hey, I’m Kiaan and I am a digital product designer and developer.
-          </p>
+          <p>Hey, I’m Kiaan and I am a product designer and developer.</p>
           <p className="mb-6">
             Currently, I lead development and product at{" "}
             <a
