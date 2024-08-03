@@ -24,12 +24,12 @@ export const ProjectPage = () => {
         header={
           <header>
             <Link to="/">
-              <p className="text-xs text-gray-400 flex gap-1 items-center">
+              <div className="text-xs text-gray-400 flex gap-1 items-center">
                 <IconWrapper>
                   <IconArrowLeft />
                 </IconWrapper>
                 Back
-              </p>
+              </div>
             </Link>
             <h2 className="text-xs font-medium">GatherSFU</h2>
           </header>
@@ -37,9 +37,15 @@ export const ProjectPage = () => {
         className="opacity-0 animate-blur-in [--blur-delay:50ms]"
         links={[
           { href: "#highlights", label: "Highlights", useHashLink: true },
-          { href: "#problem", label: "Problem", useHashLink: true },
-          { href: "#solution", label: "Solution", useHashLink: true },
-          { href: "#result", label: "Result", useHashLink: true },
+          ...(projectData.problem
+            ? [{ href: "#problem", label: "Problem", useHashLink: true }]
+            : []),
+          ...(projectData.solution
+            ? [{ href: "#solution", label: "Solution", useHashLink: true }]
+            : []),
+          ...(projectData.result
+            ? [{ href: "#result", label: "Result", useHashLink: true }]
+            : []),
         ]}
       />
       <ContentContainer className="flex flex-col gap-12 opacity-0 animate-blur-in [--blur-delay:50ms] scroll-smooth">

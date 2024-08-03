@@ -34,7 +34,6 @@ function App() {
       href: "mailto:kiaancastillo@gmail.com",
       label: "Email",
     },
-    { href: "/", label: "CV" },
   ];
 
   return (
@@ -51,7 +50,7 @@ function App() {
         footer={
           <section>
             <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block mb-1 ">
-              Last updated 07/06/24
+              Last updated 02/08/24
             </p>
             <a
               href="https://github.com/KiaanCastillo/kiaancastillo.github.io"
