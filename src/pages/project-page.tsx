@@ -31,7 +31,7 @@ export const ProjectPage = () => {
                 Back
               </div>
             </Link>
-            <h2 className="text-xs font-medium">GatherSFU</h2>
+            <h2 className="text-xs font-medium">{projectData.header.name}</h2>
           </header>
         }
         className="opacity-0 animate-blur-in [--blur-delay:50ms]"

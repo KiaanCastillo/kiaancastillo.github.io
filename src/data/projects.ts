@@ -59,6 +59,85 @@ interface Projects {
 }
 
 export const PROJECT_LIST: Projects = {
+  "peak-buddies": {
+    header: {
+      name: "PeakBuddies",
+      title: "“BeReal” but for hackathons, a fresh new take on networking",
+      ctaLabel: "View GitHub Repo",
+      ctaLink: "https://github.com/Mountain-Madness-24/peakbuddies",
+      image: peakBuddiesProjectImage,
+    },
+    info: {
+      role: ["Primary Product Designer", "Frontend Developer"],
+      timeline: "Mountain Madness 2024, 24-hour hackathon, 1st place winner",
+      skills: ["Frontend Development", "Design Systems", "Product Design"],
+      team: [
+        {
+          name: "Zachary Chan",
+          link: "https://www.linkedin.com/in/zachary-chan-a125a01bb/",
+        },
+        {
+          name: "Kian Hosseinkhani",
+          link: "https://www.linkedin.com/in/kian-khani/",
+        },
+        {
+          name: "Peyman Zhiani",
+          link: "https://www.linkedin.com/in/peiman-zhiani/",
+        },
+      ],
+    },
+    highlights: {
+      description:
+        "PeakBuddies borrows the simple concept of “BeReal” and leverages community at hackathons to bring a fresh take on the networking experience. I designed the user experience and brand identity of the product as well as lead implementation of the frontend development.",
+      images: [
+        {
+          src: peakBuddiesHighlightsLoginOnboarding,
+          alt: "Login and onboarding screens",
+        },
+        {
+          src: peakBuddiesHighlightsNetworkingFlow,
+          alt: "The networking flow of PeakBuddies",
+        },
+      ],
+    },
+    problem: {
+      content: [
+        "Everyone in university is told to go out and network. But everyone knows how intimidating it is...especially as an undergrad. I remember going to my first networking event with my friends and how paralyzed we felt standing in a room full of working professionals with years of experience under their belts. Meanwhile, us students clung to our tiny tables eating our fancy mini burgers. ",
+        "But what exactly makes networking scary, especially for a university student? From personal experience, I can narrow the issue down to two words: awkward and ingenuine. It’s awkward to walk up to a stranger and talk to them, especially someone of higher seniority. Then, there’s the transactional nature of networking. It doesn’t feel like you’re making a genuine connection with the other party and most of the time this is true. So as a student, how do you actually build a network that you can actually reach out to?",
+        "So, when my friends and I heard the theme of this year’s Mountain Madness hackathon, the idea of working on something around a new perspective immediately brought me to my own frustrations with networking.",
+        "Then, it hit me: I was currently sitting in a room full of other awkward university students eager to build cool projects and meet other hackers! Let’s leverage that.",
+      ],
+    },
+    solution: {
+      content: [
+        "Introducing PeakBuddies! What do you do with hundreds of students in an enclosed area, a limited time frame where the majority of the time spent is sitting in the same spot, and the goal of getting everyone to network with each other? Speed networking at random times throughout the event.",
+        "The idea is simple: (1) hackathon organizers create an event and set locations of interest where hackers can meet up, (2) hackers join the event by going to a link, (3) at random times throughout the day, hackers get matched and are given instructions to meet up at a pre-determined location, (4) once the pair meet, they start the speed networking and are guided by the app, (5) return to their hacking nests and repeat from step 3!",
+      ],
+      images: [
+        {
+          src: peakBuddiesSolution,
+          alt: "How PeakBuddies works",
+        },
+      ],
+    },
+    result: {
+      content: [
+        "After hours of hard work, a questionable overnight stay on Burnaby Mountain campus, and one nerve-wracking presentation later, PeakBuddies took home the first place prize! The concept proved to be popular amongst the judges as well as others who we pitched it to.",
+        "The team also learned a lot during our 24 hours together since there were a lot of moving components to the application. One was the matching system that ran in the background at a certain interval. The challenge was sending the match info to the appropriate users so that they would receive the match screen at the same time. This required a lot of tinkering with the backend and sockets that took the entire night to get right. Another hurdle was adding the map with the appropriate location market to the top of the new match screen. Using an external API always brings some chaos and that’s exactly what happened during implementation. Luckily, that feature made it by the time the deadline hit.",
+        "Overall, the project was a big success and the team’s next move is to pitch this to some local hackathon committees for some early adoption!",
+      ],
+      images: [
+        {
+          src: peakBuddiesResultAnnouncement,
+          alt: "PeakBuddies wins first place at MountainMadness",
+        },
+        {
+          src: peakBuddiesResultPresentation,
+          alt: "The PeakBuddies team during our presentation",
+        },
+      ],
+    },
+  },
   "gather-sfu": {
     header: {
       name: "GatherSFU",
@@ -169,85 +248,6 @@ export const PROJECT_LIST: Projects = {
       message: [
         "Purposely is an employee experience platform that helps companies build strong and resilient workplace culture through employee volunteer initiatives.",
         "This project is private, please contact me for more info.",
-      ],
-    },
-  },
-  "peak-buddies": {
-    header: {
-      name: "PeakBuddies",
-      title: "“BeReal” but for hackathons, a fresh new take on networking",
-      ctaLabel: "View GitHub Repo",
-      ctaLink: "https://github.com/Mountain-Madness-24/peakbuddies",
-      image: peakBuddiesProjectImage,
-    },
-    info: {
-      role: ["Primary Product Designer", "Frontend Developer"],
-      timeline: "Mountain Madness 2024, 24-hour hackathon, 1st place winner",
-      skills: ["Frontend Development", "Design Systems", "Product Design"],
-      team: [
-        {
-          name: "Zachary Chan",
-          link: "https://www.linkedin.com/in/zachary-chan-a125a01bb/",
-        },
-        {
-          name: "Kian Hosseinkhani",
-          link: "https://www.linkedin.com/in/kian-khani/",
-        },
-        {
-          name: "Peyman Zhiani",
-          link: "https://www.linkedin.com/in/peiman-zhiani/",
-        },
-      ],
-    },
-    highlights: {
-      description:
-        "PeakBuddies borrows the simple concept of “BeReal” and leverages community at hackathons to bring a fresh take on the networking experience. I designed the user experience and brand identity of the product as well as lead implementation of the frontend development.",
-      images: [
-        {
-          src: peakBuddiesHighlightsLoginOnboarding,
-          alt: "Login and onboarding screens",
-        },
-        {
-          src: peakBuddiesHighlightsNetworkingFlow,
-          alt: "The networking flow of PeakBuddies",
-        },
-      ],
-    },
-    problem: {
-      content: [
-        "Everyone in university is told to go out and network. But everyone knows how intimidating it is...especially as an undergrad. I remember going to my first networking event with my friends and how paralyzed we felt standing in a room full of working professionals with years of experience under their belts. Meanwhile, us students clung to our tiny tables eating our fancy mini burgers. ",
-        "But what exactly makes networking scary, especially for a university student? From personal experience, I can narrow the issue down to two words: awkward and ingenuine. It’s awkward to walk up to a stranger and talk to them, especially someone of higher seniority. Then, there’s the transactional nature of networking. It doesn’t feel like you’re making a genuine connection with the other party and most of the time this is true. So as a student, how do you actually build a network that you can actually reach out to?",
-        "So, when my friends and I heard the theme of this year’s Mountain Madness hackathon, the idea of working on something around a new perspective immediately brought me to my own frustrations with networking.",
-        "Then, it hit me: I was currently sitting in a room full of other awkward university students eager to build cool projects and meet other hackers! Let’s leverage that.",
-      ],
-    },
-    solution: {
-      content: [
-        "Introducing PeakBuddies! What do you do with hundreds of students in an enclosed area, a limited time frame where the majority of the time spent is sitting in the same spot, and the goal of getting everyone to network with each other? Speed networking at random times throughout the event.",
-        "The idea is simple: (1) hackathon organizers create an event and set locations of interest where hackers can meet up, (2) hackers join the event by going to a link, (3) at random times throughout the day, hackers get matched and are given instructions to meet up at a pre-determined location, (4) once the pair meet, they start the speed networking and are guided by the app, (5) return to their hacking nests and repeat from step 3!",
-      ],
-      images: [
-        {
-          src: peakBuddiesSolution,
-          alt: "How PeakBuddies works",
-        },
-      ],
-    },
-    result: {
-      content: [
-        "After hours of hard work, a questionable overnight stay on Burnaby Mountain campus, and one nerve-wracking presentation later, PeakBuddies took home the first place prize! The concept proved to be popular amongst the judges as well as others who we pitched it to.",
-        "The team also learned a lot during our 24 hours together since there were a lot of moving components to the application. One was the matching system that ran in the background at a certain interval. The challenge was sending the match info to the appropriate users so that they would receive the match screen at the same time. This required a lot of tinkering with the backend and sockets that took the entire night to get right. Another hurdle was adding the map with the appropriate location market to the top of the new match screen. Using an external API always brings some chaos and that’s exactly what happened during implementation. Luckily, that feature made it by the time the deadline hit.",
-        "Overall, the project was a big success and the team’s next move is to pitch this to some local hackathon committees for some early adoption!",
-      ],
-      images: [
-        {
-          src: peakBuddiesResultAnnouncement,
-          alt: "PeakBuddies wins first place at MountainMadness",
-        },
-        {
-          src: peakBuddiesResultPresentation,
-          alt: "The PeakBuddies team during our presentation",
-        },
       ],
     },
   },
