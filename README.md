@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Kiaan Castillo's Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website! Here you can learn more about how I built it and what design decisions I made to get to this current state.
 
-Currently, two official plugins are available:
+## How I built this
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### The Tech Stack
 
-## Expanding the ESLint configuration
+This website was created using React with TypeScript for my frontend framework, Vite for my build tool, and Tailwind for my CSS utility library. This stack enabled me to work really fast and get a website up and running in no time. Other utility libraries include React Router and React Router hash link for routing purposes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### The Design
 
-- Configure the top-level `parserOptions` property like this:
+As for designing the website, I took to my favourite tool of all time - Figma! I did a lot of brainstorming and inspiration seeking and finally landed with something that I felt embodied who I am as a person. For the visual design of my personal portfolio, I wanted it to be minimal yet attentive to small details. So while my website may seem unassuming at first, it has lots of cool little details when looking closer.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+For instance, the loading animation is one that I spent a long time tweaking. Go to [my website](https://kiaancastillo.com) again and refresh the page. You'll notice that there's a quick focus in with a small fade up action. I wanted a loading animation for every page load but didn't want it to be too out there. So, I tested out different load-in animations and finally landed on a cool little "focus" fade that takes just under half a second to finish so it's not too attention grabbing whenever you navigate the page. Look around and hover over different parts of my website to discover other little details I added!
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Let's Connect
+
+Interested in learning more? Please feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/kiaancastillo/) and send me a message! I'd love to chat :)
