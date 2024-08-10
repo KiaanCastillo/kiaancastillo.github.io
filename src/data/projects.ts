@@ -68,7 +68,7 @@ export const PROJECT_LIST: Projects = {
       image: peakBuddiesProjectImage,
     },
     info: {
-      role: ["Primary Product Designer", "Frontend Developer"],
+      role: ["Lead Frontend Developer", "Lead Product Designer"],
       timeline: "Mountain Madness 2024, 24-hour hackathon, 1st place winner",
       skills: ["Frontend Development", "Design Systems", "Product Design"],
       team: [
@@ -147,7 +147,7 @@ export const PROJECT_LIST: Projects = {
       image: gatherSFUProjectImage,
     },
     info: {
-      role: ["Primary Product Designer", "Frontend Developer"],
+      role: ["Lead Fullstack Developer", "Lead Product Designer"],
       timeline:
         "StormHacks 2022, 48-hour hackathon, 3rd place & best pitch winner, rebranded & redesigned afterwards",
       skills: ["Frontend Development", "Design Systems", "Product Design"],
@@ -239,7 +239,7 @@ export const PROJECT_LIST: Projects = {
       image: purposeUIProjectImage,
     },
     info: {
-      role: ["Primary Designer and Developer"],
+      role: ["Lead Designer", "Lead Frontend Developer"],
       timeline: "January 2023 - Present",
       skills: ["Design Systems", "Accessibility", "Visual Design", "UX Design"],
       tools: ["Figma", "React", "Less"],
