@@ -42,7 +42,7 @@ function App() {
         header={
           <header>
             <h2 className="text-xs font-medium">Kiaan Castillo</h2>
-            <p className="text-xs">Designer & Developer</p>
+            <p className="text-xs">Engineer & Designer</p>
           </header>
         }
         links={NAV_BAR_ITEMS}
@@ -50,7 +50,7 @@ function App() {
         footer={
           <section>
             <p className="font-mono text-gray-400 text-[0.63rem] hidden lg:block mb-1 ">
-              Last updated 02/08/24
+              Last updated 23/12/24
             </p>
             <a
               href="https://github.com/KiaanCastillo/kiaancastillo.github.io"
@@ -65,21 +65,13 @@ function App() {
       <ContentContainer>
         <section className="opacity-0 animate-blur-in [--blur-delay:50ms] mb-8">
           <h1 className="font-serif italic mb-8 text-[2.5rem]">
-            Crafting interfaces & <br />
-            systems with intention
+            Always building, <br />
+            always learning
           </h1>
-          <p>Hey, I’m Kiaan and I am a product designer and developer.</p>
-          <p className="mb-6">
-            Currently, I lead development and product at{" "}
-            <a
-              href="https://purposely.co"
-              target="_blank"
-              className="underline hover:text-gray-500 transition-colors duration-100 ease-in-out"
-            >
-              Purposely
-            </a>
-            .
+          <p>
+            Hey, I’m Kiaan and I am a software engineer and product designer.
           </p>
+          <p className="mb-6">Currently, I’m a software engineer at Amazon.</p>
           <p>
             I love building products from 0→1 and exploring where they can go
             next. Being involved in every step of the process and getting deep
@@ -126,24 +118,25 @@ function App() {
           </section>
           <section>
             <p className="mb-6">
-              I recently went on a life-changing trip with some of my best
-              friends and it’s got me thinking a lot about what kind of life I
-              want to live. So right now, I’m discovering that and pushing
-              myself out of my comfort zone to explore new things.
+              Recently, I moved to Seattle and started a brand new chapter of my
+              life! I’m so grateful and excited for this new era and for what’s
+              to come.
             </p>
-            <p>Here’s some stuff I’m doing now:</p>
+            <p>For now, here’s some stuff I’m doing nowadays:</p>
             <ul className=" list-disc text-sm ml-7 mt-4">
-              <li>Exploring my fashion, send me shoe and earring recs! </li>
               <li>
-                Working on a side project, stay tuned for more info and a beta
-                (hint: Notion)
+                Bouldering! I was introduced to a cool community and I’m looking
+                to go frequently in the new year
+              </li>
+              <li>Reconnecting with my Filipino roots</li>
+              <li>
+                Writing! When I was younger I was constantly writing stories and
+                building complex worlds and plots
               </li>
               <li>
-                Picking up my Sony A6000 after a few years and rediscovering my
-                love for cinematography
+                Revisiting my love for music and playing in an orchestra,
+                specifically the piano and violin
               </li>
-              <li>Starting my running era</li>
-              <li>Making more time for my loved ones</li>
             </ul>
             <p className="mt-4">
               And many more... but for now, thanks for stopping by :) Let's{" "}
